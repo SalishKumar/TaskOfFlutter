@@ -4,6 +4,8 @@ import 'package:testui/Screens/Home1.dart';
 import 'package:testui/Screens/Profile.dart';
 import 'package:testui/Screens/Requests.dart';
 import 'package:testui/Screens/MyPackages1.dart';
+import 'package:testui/Screens/Sessions.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class Home extends StatefulWidget {
@@ -21,7 +23,7 @@ class _HomeState extends State<Home> {
   String currentPage = "Home";
 
   List<Widget> pages = [
-    Text("1"),
+    Sessions(),
     Requests(),
     Home1(),
     MyPakages1(),
@@ -124,10 +126,7 @@ class _HomeState extends State<Home> {
                     children: [
                       Column(
                         children: [
-                          Icon(
-                            Icons.sports,
-                            color: session,
-                          ),
+                          FaIcon(FontAwesomeIcons.dumbbell,color: session),
                           Text(
                               'Session',
                             style: TextStyle(

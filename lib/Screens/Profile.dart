@@ -8,6 +8,25 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  TextEditingController dobController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emaiControllerl = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController countryController = TextEditingController();
+  TextEditingController sportController = TextEditingController();
+
+  @override
+  void initState() {
+    dobController.value = TextEditingValue(text: "30,DEC 2020");
+    nameController.value = TextEditingValue(text: "Salish kumar");
+    emaiControllerl.value = TextEditingValue(text: "Goindanisalish@gmail.com");
+    phoneController.value = TextEditingValue(text: "03342384281");
+    countryController.value = TextEditingValue(text: "Pakistan");
+    sportController.value = TextEditingValue(text: "No");
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -71,6 +90,8 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               TextField(
+                readOnly: true,
+                controller: nameController,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
                   counterStyle: TextStyle(fontWeight: FontWeight.bold),
@@ -90,8 +111,11 @@ class _ProfileState extends State<Profile> {
               ),
               SizedBox(height: 10,),
               TextField(
+                readOnly: true,
+                controller: emaiControllerl,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
+
                     labelText: "EMAIL",
                     labelStyle: TextStyle(
                       color: Colors.green,
@@ -108,6 +132,8 @@ class _ProfileState extends State<Profile> {
               SizedBox(height: 10,),
 
               TextField(
+                readOnly: true,
+                controller: phoneController,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
                     labelText: "PHONE",
@@ -126,6 +152,8 @@ class _ProfileState extends State<Profile> {
               SizedBox(height: 10,),
 
               TextField(
+                readOnly: true,
+                controller: countryController,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
                     labelText: "COUNTRY",
@@ -145,6 +173,8 @@ class _ProfileState extends State<Profile> {
 
               TextField(
                 style: TextStyle(fontWeight: FontWeight.bold),
+                readOnly: true,
+                controller: dobController,
                 decoration: InputDecoration(
                     labelText: "DATE OF BIRTH",
                     labelStyle: TextStyle(
@@ -162,6 +192,8 @@ class _ProfileState extends State<Profile> {
               SizedBox(height: 10,),
 
               TextField(
+                readOnly: true,
+                controller: sportController,
                 style: TextStyle(fontWeight: FontWeight.bold),
                 decoration: InputDecoration(
                     labelText: "SPORTS ASSOCIATED WITH",
